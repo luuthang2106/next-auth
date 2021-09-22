@@ -1,7 +1,8 @@
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useAuth } from 'hooks/useAuth'
+import Link from 'next/link'
 
 const Register: NextPage = () => {
     const [username, setUsername] = useState("")
@@ -25,6 +26,11 @@ const Register: NextPage = () => {
     return (
         <div className="w-screen h-screen flex items-center justify-center text-sm">
             <div className="w-11/12 md:w-96 shadow p-6">
+            <Link href="/">
+                <button className="px-4 py-2 shadow">
+                      Home
+              </button>
+              </Link>
                 <div className="flex flex-col w-full space-y-4">
                     <p className="uppercase text-center font-bold">Register</p>
                     <p className={`${success ? 'text-green-400' : 'text-red-400'} text-center`}>
